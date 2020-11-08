@@ -182,8 +182,16 @@ static_configs:
 
 Prometheus has a web interface where you can already monitor metrics: </br>
 
+![Screenshot](./pics/image2.png)<br/>
 
 
+You can find the new metrics from this service: </br>
+
+![Screenshot](./pics/image3.png)<br/>
+
+And the graph (after some modifications on the response time)
+
+![Screenshot](./pics/image4.png)<br/>
 
 
 
