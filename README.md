@@ -44,7 +44,17 @@ The main endpoint is the /service endpoint when this one is invoked for example 
 The endpoint defined will submit internally an http request to the url specified and still store the result: 0 or 1 depending on the http code returned and store the response time inside a different metric, the endpoint will finally reply with a 200OK to the client.</br>
 The endpoint /metrics is by default implemented by the prometheus Handler promhttp.Handler()
 
-## Design:
+## Run the project:
+The project can be run: locally, on Docker, on K8s.
+
+### Run it locally: 
+You have two options: I provided binaries for Linux and OSX you can just run the binary ./vmw-vdp. </br>
+You may want to compile and build the project for another O.S. or do some fix in this case I'm using the modules of GO so all dependencies should be downloaded automatically when you do a: </br>
+go build
+</br>
+In any case before running it you need to setup O.S. env variables that you can find in the file set-env.sh in the same directory of the binary.
+
+### Run it on docker: 
 
 
 
