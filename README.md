@@ -81,7 +81,7 @@ ENTRYPOINT /go/bin/vmw-vdp
 EXPOSE 8080
 ```
 
-You can then build the image from his:
+You can then build the image from his: </br>
 
 * **docker build -t vmw-dp  .**
 
@@ -102,7 +102,7 @@ You can create a config map like this (please find the .yaml file inside the Kue
 
 Docker public image is uploaded in Dockerhub in danielepalaia/vmw-vdp repo. To get a deployment spec you can simply: </br>
 
-kubectl create deployment vmw-vdp-deploy --image=danielepalaia/vmw-vdp --dry-run --replicas=1 -o yaml > vmw-vdp-deploy.yaml </br>
+* **kubectl create deployment vmw-vdp-deploy --image=danielepalaia/vmw-vdp --dry-run --replicas=1 -o yaml > vmw-vdp-deploy.yaml** </br>
 
 and then from here adding the configmap env variable to the pod like this:
 
@@ -116,10 +116,12 @@ spec:
             name: vmw-vdp-map
 ```
 
-Please find the mw-vdp-deploy.yaml with the full Deployment spec inside the Kubernetes directory of this project.
+Please find the mw-vdp-deploy.yaml with the full Deployment spec inside the Kubernetes directory of this project. </br>
 I tried the project with minikube. Minikube doesn't allow the creation of load balancer service. </br>
 
-To test this simple project you can simply use port-forward and then use curl as done before:
+To test this simple project you can simply use port-forward (assuming you have just one pod) and then use curl as done before: </br>
+
+Alternatively you can kubectl expose service to create a service of type LoadBalancer
 
 ```
 dpalaia-a01:vmw-vdp dpalaia$ kubectl get pod
@@ -132,6 +134,8 @@ Handling connection for 8080
 ```
 
 ![Screenshot](./pics/image1.png)<br/>
+
+
 
 
 
