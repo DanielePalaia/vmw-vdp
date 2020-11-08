@@ -56,6 +56,77 @@ In any case before running it you need to setup O.S. env variables that you can 
 
 ### Run it on docker: 
 
+I created an image of the project and pushed it in public repo of my **dockerhub** profile at: </br>
+https://hub.docker.com/repository/docker/danielepalaia/vmw-vdp
+</br>
+Also a simple dockerfile has been provided (the same one pushed on dockerhub) and you can find it in the repo </br>
+
+```
+# Start from a Debian image with the latest version of Go installed
+# and a workspace (GOPATH) configured at /go.
+FROM golang
+
+# Copy the local package files to the container's workspace.
+ADD . /go/src/vmw-vdp
+
+# Build the outyet command inside the container.
+# (You may fetch or manage dependencies here,
+# either manually or with a tool like "godep".)
+RUN go install vmw-vdp
+
+# Run the outyet command by default when the container starts.
+ENTRYPOINT /go/bin/vmw-vdp
+
+# Document that the service listens on port 8080.
+EXPOSE 8080
+```
+
+You can then build the image from his:
+
+**docker build -t vmw-dp  . **
+
+you can then run it passing the env variables needed: </br>
+
+docker run -e host=localhost -e port=8080 -e numUrls=2 -e url1=https://httpstat.us/503 -e url2=https://httpstat.us/200 --publish 8080:8080 --name vmw-vdp-container-last vmw-dp </br>
+
+You can then submit requests using cur locally on port 8080
+
+### Run it on Kubernetes: 
+
+Environment variables are taken from pod using usually config maps (no password necessary here so no secrets necessary). <br>
+
+You can create a config map like this (please find the .yaml file inside the Kuebernetes directory in order to run it with kubectl create -f): </br>
+
+**kubectl create cm vmw-vdp-map --from-literal=host=0.0.0.0 --from-literal=port=8080 --from-literal=numUrls=2 --from-literal=url1=https://httpstat.us/503 --from-literal=url1=https://httpstat.us/200**
+
+
+Docker public image is uploaded in Dockerhub in danielepalaia/vmw-vdp repo. To get a deployment spec you can simply: </br>
+
+kubectl create deployment vmw-vdp-deploy --image=danielepalaia/vmw-vdp --dry-run --replicas=1 -o yaml > vmw-vdp-deploy.yaml </br>
+
+and then from here adding the configmap env variable to the pod like this:
+
+```
+spec:
+      containers:
+      - image: danielepalaia/vmw-vdp
+        name: vmw-vdp
+        envFrom:
+        - configMapRef:
+            name: vmw-vdp-map
+```
+
+Please find the mw-vdp-deploy.yaml with the full Deployment spec inside the Kubernetes directory of this project.
+
+
+
+
+
+
+
+
+
+
 
 
 
