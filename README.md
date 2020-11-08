@@ -21,14 +21,14 @@ Others requirements:
 ## Design:
 The project is written in GO </br>
 The project is divided in several packages to make code modular and reusable. It is composed by the following modules: </br>
-**controllers**: This package contains the logic of the endpoints functions</br>
-**environments**: This package contains the environment settings of the project</br>
-**prometheus**: This packate embed the prometheus functionalities in order for the callback to set the metrics </br>
-**utilities**: This package contains utilities functions which ba be used in other projects if necessary</br>
-**main**: This is the main package, it is composed by the service.go file which contains the main function and the route.go file which is used for manage and routing callback using gorilla. </br>
+* controllers: This package contains the logic of the endpoints functions</br>
+* environments: This package contains the environment settings of the project</br>
+* prometheus: This packate embed the prometheus functionalities in order for the callback to set the metrics </br>
+* utilities: This package contains utilities functions which ba be used in other projects if necessary</br>
+* main: This is the main package, it is composed by the service.go file which contains the main function and the route.go file which is used for manage and routing callback using gorilla. </br>
 
 The service exposes two endpoints:  </br>
-**/service** which is the endpoint calling the urls specified  </br>
-**/metrics** which is the endpoint that will manage the metrics that prometheus will monitor </br> </br>
+* /service which is the endpoint calling the urls specified  </br>
+* /metrics which is the endpoint that will manage the metrics that prometheus will monitor </br> </br>
 The library Gorilla has been chosen to make the web-server extensible in order to be able to add new endpoints for different
 
