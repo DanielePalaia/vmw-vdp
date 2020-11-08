@@ -117,7 +117,7 @@ spec:
             name: vmw-vdp-map
 ```
 
-Please find the mw-vdp-deploy.yaml with the full Deployment spec inside the Kubernetes directory of this project. </br>
+* Please find the mw-vdp-deploy.yaml with the full Deployment spec inside the Kubernetes directory of this project. 
 I tried the project with minikube. Minikube doesn't allow the creation of load balancer service. </br>
 
 To test this simple project you can simply use port-forward (assuming you have just one pod) and then use curl as done before: </br>
