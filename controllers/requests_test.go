@@ -11,11 +11,11 @@ func TestCGetUrls(t *testing.T) {
 	expectedPrometheusCode1 := 0
 	expectedPrometheusCode2 := 1
 
-	prometheusCode := DoRequestAndReceiveResponse(url1)
+	prometheusCode := doRequestAndReceiveResponse(url1)
 	if prometheusCode != expectedPrometheusCode1 {
 		t.Errorf("Test failed Expected prometheuscode: %d Actual Result: %d", expectedPrometheusCode1, prometheusCode)
 	}
-	prometheusCode = DoRequestAndReceiveResponse(url2)
+	prometheusCode = doRequestAndReceiveResponse(url2)
 	if prometheusCode != expectedPrometheusCode2 {
 		t.Errorf("Test failed Expected prometheuscode: %d Actual Result: %d", expectedPrometheusCode1, prometheusCode)
 	}
