@@ -167,7 +167,7 @@ sample_external_url_up{url="https://httpstat.us/503"} 0
 
 ## Prometheus integration:
 
-Prometheus offer different kind of metrics. For this simple service a gauge metric has been chosen. </br>
+Prometheus offer different kind of metrics. For this simple service gauge metrics have been chosen. </br>
 
 Once this service is up you can run Prometheus to receive metrics from the end point:  </br>
 
@@ -189,7 +189,7 @@ You can find the new metrics from this service: </br>
 
 ![Screenshot](./pics/image3.png)<br/>
 
-And the graph (after some modifications on the response time)
+And the graph (after some modifications on the response time, the other metric for these two urls is meaningless because they return always ok or no)
 
 ![Screenshot](./pics/image4.png)<br/>
 
