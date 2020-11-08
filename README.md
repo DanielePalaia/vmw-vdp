@@ -48,7 +48,7 @@ The endpoint /metrics is by default implemented by the prometheus Handler promht
 The project can be run: locally, on Docker, on K8s.
 
 ### Run it locally: 
-You have two options: I provided binaries for Linux and OSX you can just run the binary ./vmw-vdp. </br>
+You have two options: I provided binaries for Linux and OSX you can just run the binary **./vmw-vdp**. </br>
 You may want to compile and build the project for another O.S. or do some fix in this case I'm using the modules of GO so all dependencies should be downloaded automatically when you do a: </br>
 go build
 </br>
@@ -117,6 +117,20 @@ spec:
 ```
 
 Please find the mw-vdp-deploy.yaml with the full Deployment spec inside the Kubernetes directory of this project.
+I tried the project with minikube. Minikube doesn't allow the creation of load balancer service. </br>
+
+To test this simple project you can simply use port-forward and then use curl as done before:
+
+```
+dpalaia-a01:vmw-vdp dpalaia$ kubectl get pod
+NAME                              READY   STATUS    RESTARTS   AGE
+vmw-vdp-deploy-85cd48cf5f-9r6m6   1/1     Running   0          18m
+dpalaia-a01:vmw-vdp dpalaia$ kubectl port-forward vmw-vdp-deploy-85cd48cf5f-9r6m6 8080:8080
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+```
+
 
 
 
