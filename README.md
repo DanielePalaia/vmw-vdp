@@ -27,16 +27,25 @@ The project is divided in several packages to make code modular and reusable. It
 * **utilities:** This package contains utilities functions which ba be used in other projects if necessary</br>
 * **main:** This is the main package, it is composed by the service.go file which contains the main function and the route.go file which is used for manage and routing callback using gorilla. </br>
 
+Given that the project needs to be run locally, on Docker and on Kubernetes, all initialization parameters of the project are taken in input from O.S. environment variables. I will explaines in a next paragraph how to set them for Docker and K8s. For the moment just to mention that the variables needed are the following:
+* **host**: This one set the address where teh service will listen/will be binded
+* **port**: We need the port as well
+* **numUrls**: This represents the number or Urls the service will call. I wanted to extend the requirements of the project and allow it to be able to manage as many urls we want
+* **url1 - url2 - url3...**: The url we want to manage (specify as many as you put in numUrls </br>
+
 The service exposes two endpoints:  </br>
 * **/service** which is the endpoint calling the urls specified  </br>
 * **/metrics** which is the endpoint that will manage the metrics that prometheus will monitor </br> </br>
 
 The framework **Gorilla** has been chosen to make the web-server extensible in order to be able to add new endpoints for different. To add a new endpoint is enough to add the logic inside routes.go and define a new function inside the controllers package </br>
 
-The main endpoint is the /service endpoint when this one is invoked for example with a:</br>
-**curl localhost:8080/service**</br>
-It will submit internally an http request to the url specified and still store the result: 0 or 1 depending on the http code returned and store the response time inside a different</br>
+The main endpoint is the /service endpoint when this one is invoked for example with a:</br></br>
+**curl localhost:8080/service**</br></br>
+The endpoint defined will submit internally an http request to the url specified and still store the result: 0 or 1 depending on the http code returned and store the response time inside a different metric, the endpoint will finally reply with a 200OK to the client.</br>
 The endpoint /metrics is by default implemented by the prometheus Handler promhttp.Handler()
+
+## Design:
+
 
 
 
