@@ -137,10 +137,50 @@ Handling connection for 8080
 ![Screenshot](./pics/image1.png)<br/>
 
 
+### Try the project:
 
+Once exectued in one way or another the service should be listening in the two endpoints:
 
+You can try /metrics:
 
+```
+dpalaia-a01:vmw-vdp dpalaia$ curl http://localhost:8080/metrics
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 3.413e-05
+go_gc_duration_seconds{quantile="0.25"} 3.7934e-05
+go_gc_duration_seconds{quantile="0.5"} 4.2172e-05
+...
+```
 
+Then you can call curl http://localhost:8080/service to start calling the two urls. You should then see in the /metrics the new metrics created:
+
+```# HELP sample_external_url_response_ms response time of the url
+# TYPE sample_external_url_response_ms gauge
+sample_external_url_response_ms{url="https://httpstat.us/200"} 198
+sample_external_url_response_ms{url="https://httpstat.us/503"} 276
+# HELP sample_external_url_up is url up or down
+# TYPE sample_external_url_up gauge
+sample_external_url_up{url="https://httpstat.us/200"} 1
+sample_external_url_up{url="https://httpstat.us/503"} 0
+```
+
+### Prometheus integration:
+
+Prometheus offer different kind of metrics. For this simple service a gauge metric has been chosen. </br>
+
+Once this service is up you can run Prometheus to receive metrics from the end point:  </br>
+
+* ./prometheus --config.file=prometheus.yml
+
+Prometheus take one configuration file. You can use the default one and just modify the target:
+
+```
+static_configs:
+    - targets: ['localhost:8080']
+```
+
+Prometheus has a web interface where you can already monitor metrics: </br>
 
 
 
