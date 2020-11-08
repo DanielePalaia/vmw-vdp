@@ -208,6 +208,12 @@ The package environments contains just a model with getters and setters </br>
 The package prometheus contains just variable definitions and the prometheus Init() </br>
 The file routes contains just routes handling </br>
 
+
+## Code analysis:
+
+For production-ready products run a static code analysis is very important. </br>
+I run https://github.com/golang/lint without any issues on the code.
+
 # Log management
 As for every service logs are important. As this project was conceived to be run mainly on Docker/K8s all logs are directed at stdout/stderr. </br>
 In case we want to run it on a phisical server then we can redirect > to a log file. </br>
