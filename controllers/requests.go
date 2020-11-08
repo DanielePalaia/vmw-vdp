@@ -20,7 +20,7 @@ func HandleServiceRequest(w http.ResponseWriter, r *http.Request) {
 	for _, url := range urls {
 
 		log.Printf("new request to: %v", url)
-		DoRequestAndReceiveResponse(url)
+		doRequestAndReceiveResponse(url)
 
 	}
 
@@ -30,7 +30,7 @@ func HandleServiceRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 // DoRequestAndReceiveResponse receive a manage a single url
-func DoRequestAndReceiveResponse(url string) int {
+func doRequestAndReceiveResponse(url string) int {
 
 	start := time.Now()
 	req, err := http.NewRequest(http.MethodGet, url, nil)

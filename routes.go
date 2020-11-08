@@ -10,10 +10,10 @@ import (
 
 // Route struct contains route configuration
 type Route struct {
-	Name    string
-	Method  string
-	Pattern string
-	Handler http.Handler
+	name    string
+	method  string
+	pattern string
+	handler http.Handler
 }
 
 // Routes ia a vector of Route
@@ -25,10 +25,10 @@ func NewRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 	for _, route := range routes {
 		router.
-			Methods(route.Method).
-			Path(route.Pattern).
-			Name(route.Name).
-			Handler(route.Handler)
+			Methods(route.method).
+			Path(route.pattern).
+			Name(route.name).
+			Handler(route.handler)
 	}
 
 	return router
