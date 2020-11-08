@@ -137,7 +137,7 @@ Handling connection for 8080
 ![Screenshot](./pics/image1.png)<br/>
 
 
-### Try the project:
+## Try the project:
 
 Once exectued in one way or another the service should be listening in the two endpoints:
 
@@ -165,7 +165,7 @@ sample_external_url_up{url="https://httpstat.us/200"} 1
 sample_external_url_up{url="https://httpstat.us/503"} 0
 ```
 
-### Prometheus integration:
+## Prometheus integration:
 
 Prometheus offer different kind of metrics. For this simple service a gauge metric has been chosen. </br>
 
