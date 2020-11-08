@@ -48,9 +48,10 @@ The endpoint /metrics is by default implemented by the prometheus Handler promht
 The project can be run: locally, on Docker, on K8s.
 
 ### Run it locally: 
-You have two options: I provided binaries for Linux and OSX you can just run the binary **./vmw-vdp**. </br>
+You have two options: I provided binaries for Linux and OSX you can just run the binary </br>
+* **./vmw-vdp**. 
 You may want to compile and build the project for another O.S. or do some fix in this case I'm using the modules of GO so all dependencies should be downloaded automatically when you do a: </br>
-go build
+* **go build**
 </br>
 In any case before running it you need to setup O.S. env variables that you can find in the file set-env.sh in the same directory of the binary.
 
