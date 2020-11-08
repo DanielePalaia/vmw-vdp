@@ -19,7 +19,7 @@ Others requirements:
 * Unit Tests
 
 ## Design:
-The project is written in GO </br>
+The project is written in GO </br></br>
 The project is divided in several packages to make code modular and reusable. It is composed by the following modules: </br>
 * **controllers:** This package contains the logic of the endpoints functions</br>
 * **environments:** This package contains the environment settings of the project</br>
@@ -28,13 +28,13 @@ The project is divided in several packages to make code modular and reusable. It
 * **main:** This is the main package, it is composed by the service.go file which contains the main function and the route.go file which is used for manage and routing callback using gorilla. </br>
 
 The service exposes two endpoints:  </br>
-* /service which is the endpoint calling the urls specified  </br>
-* /metrics which is the endpoint that will manage the metrics that prometheus will monitor </br> </br>
+* **/service** which is the endpoint calling the urls specified  </br>
+* **/metrics** which is the endpoint that will manage the metrics that prometheus will monitor </br> </br>
 
 The library Gorilla has been chosen to make the web-server extensible in order to be able to add new endpoints for different. To add a new endpoint is enough to add the logic inside routes.go and define a new function inside the controllers package </br>
 
 The main endpoint is the /service endpoint when this one is invoked for example with a:</br>
-curl localhost:8080/service</br>
+**curl localhost:8080/service**</br>
 It will submit internally an http request to the url specified and still store the result: 0 or 1 depending on the http code returned and store the response time inside a different</br>
 The endpoint /metrics is by default implemented by the prometheus Handler promhttp.Handler()
 
