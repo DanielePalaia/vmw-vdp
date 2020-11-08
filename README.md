@@ -202,7 +202,15 @@ Unit tests have been provided: Run
 To run them and 
 * go tool cover -html=coverage.out
 
-To see code covered 
+To see code covered.
+I created tests for the package controllers which is the most meaningful one and utilities. </br>
+The package environments contains just a model with getters and setters </br>
+The package prometheus contains just variable definitions and the prometheus Init() </br>
+The file routes contains just routes handling </br>
+
+# Log management
+As for every service logs are important. As this project was conceived to be run mainly on Docker/K8s all logs are directed at stdout/stderr. </br>
+In case we want to run it on a phisical server then we can redirect > to a log file. </br>
 
 
 ## Improvements:
@@ -213,6 +221,8 @@ This was just an exercise so I tried to make things easy. Possible improvements 
 * The kubernetes Objects could be packaged in a helm chart. But as we have just one deployment and one config map I tought was fine like this
 * In case we have a test/production environment a pipeline should be created in order to git push -> run tests -> deploy in test/prod
 * Grafana dashboards: Initially I planned to use it as the graph are much better but as I discovered Prometheus as already a basic graph I just used that one.
+* Binaries shouldn't be included on github but I put it for semplicity of the project
+* Logs should be improved. I just put logs at standard output/error as was stated the project was mainly considered for Docker/K8s but in case it will run also on phisical server logs should be redirect on log files.
 
 
 
