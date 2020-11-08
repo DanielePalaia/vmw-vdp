@@ -37,7 +37,7 @@ The service exposes two endpoints:  </br>
 * **/service** which is the endpoint calling the urls specified  </br>
 * **/metrics** which is the endpoint that will manage the metrics that prometheus will monitor </br> </br>
 
-The framework **Gorilla** has been chosen to make the web-server extensible in order to be able to add new endpoints for different. To add a new endpoint is enough to add the logic inside routes.go and define a new function inside the controllers package </br>
+The framework **Gorilla** has been chosen to make the web-server extensible in order to be able to add new endpoints for different extensions. To add a new endpoint is enough to add the logic inside routes.go and define a new function inside the controllers package </br>
 
 The main endpoint is the /service endpoint when this one is invoked for example with a:</br></br>
 * **curl localhost:8080/service**
