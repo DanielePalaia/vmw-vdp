@@ -195,7 +195,23 @@ And the graph (after some modifications on the response time, the other metric f
 
 
 
+## Unit tests:
 
+Unit tests have been provided: Run 
+* go test -v ./...
+To run them and 
+* go tool cover -html=coverage.out
+
+To see code covered 
+
+
+## Improvements:
+
+This was just an exercise so I tried to make things easy. Possible improvements of the project are the following
+
+* The /service end point doesn't take an input and it returns just an Ok/error message. Maybe this can be expanded, the client could request in input as .json the urls to call, how many times to run them and for how long (just as an example). In this case more tests should be done in order to mock request/response
+* The kubernetes Objects could be packaged in a helm chart. But as we have just one deployment and one config map I tought was fine like this
+* In case we have a test/production environment a pipeline should be created in order to git push -> run tests -> deploy in test/prod
 
 
 
