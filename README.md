@@ -40,7 +40,7 @@ The service exposes two endpoints:  </br>
 The framework **Gorilla** has been chosen to make the web-server extensible in order to be able to add new endpoints for different. To add a new endpoint is enough to add the logic inside routes.go and define a new function inside the controllers package </br>
 
 The main endpoint is the /service endpoint when this one is invoked for example with a:</br></br>
-**curl localhost:8080/service**</br></br>
+* **curl localhost:8080/service**
 The endpoint defined will submit internally an http request to the url specified and still store the result: 0 or 1 depending on the http code returned and store the response time inside a different metric, the endpoint will finally reply with a 200OK to the client.</br>
 The endpoint /metrics is by default implemented by the prometheus Handler promhttp.Handler()
 
