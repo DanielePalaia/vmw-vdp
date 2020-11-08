@@ -134,7 +134,7 @@ Forwarding from [::1]:8080 -> 8080
 Handling connection for 8080
 ```
 
-![Screenshot](./pics/github-image1.png)<br/>
+![Screenshot](./github-pics/image1.png)<br/>
 
 
 ## Try the project:
