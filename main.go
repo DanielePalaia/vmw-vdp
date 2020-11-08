@@ -15,6 +15,7 @@ func main() {
 
 	environments.SetUrls(urls)
 
+	utilities.PrintLogs(host, port, urls)
 	createServer(host, port)
 
 }

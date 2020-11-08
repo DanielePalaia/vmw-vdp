@@ -1,3 +1,4 @@
+// Package utilities provide general utilities functions which can be reused in other projects
 package utilities
 
 import (
@@ -6,6 +7,7 @@ import (
 	"strconv"
 )
 
+// GetHostAndPort returns the host and the port defined in the OS variables host and port
 func GetHostAndPort() (string, string) {
 
 	host := os.Getenv("host")
@@ -15,6 +17,7 @@ func GetHostAndPort() (string, string) {
 
 }
 
+// GetUrls returns the number of Urls which this project should target and url1, url2....
 func GetUrls() []string {
 
 	numOfUrls := os.Getenv("numUrls")
@@ -34,4 +37,9 @@ func GetUrls() []string {
 
 	return urls
 
+}
+
+// PrintLogs prints general logs prints for main
+func PrintLogs(host string, port string, urls []string) {
+	log.Printf("Starting service at host: %v and port: %v targetting urls: %v", host, port, urls)
 }

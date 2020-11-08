@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vmw-vdp-deploy
+  name: vmw-vdp-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vmw-vdp-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vmw-vdp-deploy
+    spec:
+      containers:
+      - image: danielepalaia/vmw-vdp
+        name: vmw-vdp
+        envFrom:
+        - configMapRef:
+            name: vmw-vdp-map 
+        resources: {}
+          
+status: {}

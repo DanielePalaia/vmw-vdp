@@ -17,6 +17,7 @@ type Route struct {
 
 type Routes []Route
 
+// NewRouter returns a router to manage different routes
 func NewRouter() *mux.Router {
 
 	router := mux.NewRouter().StrictSlash(true)
@@ -37,7 +38,7 @@ var routes = Routes{
 		"getMetrics",
 		"GET",
 		"/service",
-		http.HandlerFunc(controllers.HandleMetricsRequest),
+		http.HandlerFunc(controllers.HandleServiceRequest),
 	},
 	Route{
 		"getMetrics",

@@ -1,0 +1,20 @@
+mode: set
+vmw-vdp/utilities/utilities.go:11.40,18.2 3 1
+vmw-vdp/utilities/utilities.go:21.25,27.61 4 1
+vmw-vdp/utilities/utilities.go:31.2,33.36 2 1
+vmw-vdp/utilities/utilities.go:38.2,38.13 1 1
+vmw-vdp/utilities/utilities.go:27.61,29.3 1 0
+vmw-vdp/utilities/utilities.go:33.36,36.3 2 1
+vmw-vdp/utilities/utilities.go:43.57,45.2 1 0
+vmw-vdp/controllers/requests.go:13.67,20.27 3 0
+vmw-vdp/controllers/requests.go:28.2,28.30 1 0
+vmw-vdp/controllers/requests.go:20.27,25.3 2 0
+vmw-vdp/controllers/requests.go:32.50,36.16 3 1
+vmw-vdp/controllers/requests.go:40.2,43.16 3 1
+vmw-vdp/controllers/requests.go:47.2,51.19 4 1
+vmw-vdp/controllers/requests.go:58.2,62.23 3 1
+vmw-vdp/controllers/requests.go:36.16,39.3 1 0
+vmw-vdp/controllers/requests.go:43.16,45.3 1 0
+vmw-vdp/controllers/requests.go:51.19,54.3 2 1
+vmw-vdp/controllers/requests.go:54.8,54.26 1 1
+vmw-vdp/controllers/requests.go:54.26,57.3 2 1
