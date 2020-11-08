@@ -83,11 +83,11 @@ EXPOSE 8080
 
 You can then build the image from his:
 
-**docker build -t vmw-dp  . **
+**docker build -t vmw-dp  .**
 
 you can then run it passing the env variables needed: </br>
 
-docker run -e host=localhost -e port=8080 -e numUrls=2 -e url1=https://httpstat.us/503 -e url2=https://httpstat.us/200 --publish 8080:8080 --name vmw-vdp-container-last vmw-dp </br>
+**docker run -e host=localhost -e port=8080 -e numUrls=2 -e url1=https://httpstat.us/503 -e url2=https://httpstat.us/200 --publish 8080:8080 --name vmw-vdp-container-last vmw-dp** </br>
 
 You can then submit requests using cur locally on port 8080
 
@@ -130,6 +130,8 @@ Forwarding from 127.0.0.1:8080 -> 8080
 Forwarding from [::1]:8080 -> 8080
 Handling connection for 8080
 ```
+
+![Screenshot](./pics/image1.png)<br/>
 
 
 
