@@ -2,9 +2,9 @@
 This is an exercice project using the following tech stack: Golang, Docker, K8s and Prometheus. </br>
 
 ## Requirements:
-A service written in golang that queries 2 urls (https://httpstat.us/503 & https://httpstat.us/200) </br>
-The service will check the external urls (https://httpstat.us/503 & https://httpstat.us/200 ) are up (based on http status code 200) and response time in milliseconds </br>
-The service will run a simple http service that produces  metrics (on /metrics) and output a prometheus format when hitting the service /metrics url </br></br>
+* A service written in golang that queries 2 urls (https://httpstat.us/503 & https://httpstat.us/200) </br>
+* The service will check the external urls (https://httpstat.us/503 & https://httpstat.us/200 ) are up (based on http status code 200) and response time in milliseconds </br>
+* The service will run a simple http service that produces  metrics (on /metrics) and output a prometheus format when hitting the service /metrics url </br></br>
 Expected response format:
 
 ```
