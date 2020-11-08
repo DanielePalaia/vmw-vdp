@@ -134,7 +134,7 @@ Forwarding from [::1]:8080 -> 8080
 Handling connection for 8080
 ```
 
-![Screenshot](./pics/image1.png)<br/>
+![Screenshot](./pics/github-image1.png)<br/>
 
 
 ## Try the project:
@@ -182,16 +182,16 @@ static_configs:
 
 Prometheus has a web interface where you can already monitor metrics: </br>
 
-![Screenshot](./pics/image2.png)<br/>
+![Screenshot](./github-pics/image2.png)<br/>
 
 
 You can find the new metrics from this service: </br>
 
-![Screenshot](./pics/image3.png)<br/>
+![Screenshot](./github-pics/image3.png)<br/>
 
 And the graph (after some modifications on the response time, the other metric for these two urls is meaningless because they return always ok or no)
 
-![Screenshot](./pics/image4.png)<br/>
+![Screenshot](./github-pics/image4.png)<br/>
 
 
 
