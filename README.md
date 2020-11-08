@@ -14,9 +14,9 @@ sample_external_url_up{url="https://httpstat.us/200 "}  = 1
 sample_external_url_response_ms{url="https://httpstat.us/200 "}  = [value]
 ```
 Others requirements:
-*Dockerfile to build image
-*Kubernetes Deployment Specification to deploy Image to Kubernetes Cluster
-*Unit Tests
+* Dockerfile to build image
+* Kubernetes Deployment Specification to deploy Image to Kubernetes Cluster
+* Unit Tests
 
 ## Design:
 The project is written in GO </br>
