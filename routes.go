@@ -8,6 +8,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+// Route struct contains route configuration
 type Route struct {
 	Name    string
 	Method  string
@@ -15,6 +16,7 @@ type Route struct {
 	Handler http.Handler
 }
 
+// Routes ia a vector of Route
 type Routes []Route
 
 // NewRouter returns a router to manage different routes

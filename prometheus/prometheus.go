@@ -1,9 +1,10 @@
-// package prometheus contains the prometheus init to be able to setup gauge metrics
+// Package prometheus contains the prometheus init to be able to setup gauge metrics
 package prometheus
 
 import "github.com/prometheus/client_golang/prometheus"
 
 var (
+	// LinkUp is containing the GaugeVec struct
 	LinkUp = prometheus.NewGaugeVec(
 		prometheus.GaugeOpts{
 			Namespace: "sample",
@@ -15,6 +16,7 @@ var (
 		// job, and the type of job that was processed
 		[]string{"url"},
 	)
+	// ResponseMs is containing a GaugeVec struct
 	ResponseMs = prometheus.NewGaugeVec(
 		prometheus.GaugeOpts{
 			Namespace: "sample",

@@ -9,7 +9,7 @@ import (
 	"vmw-vdp/prometheus"
 )
 
-// Receive and manage the request (city and numbers of info)
+// HandleServiceRequest Receives and manage the request (city and numbers of info)
 func HandleServiceRequest(w http.ResponseWriter, r *http.Request) {
 
 	log.Print("HandleServiceRequest: Receiving a /service request")
@@ -29,6 +29,7 @@ func HandleServiceRequest(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// DoRequestAndReceiveResponse receive a manage a single url
 func DoRequestAndReceiveResponse(url string) int {
 
 	start := time.Now()
